@@ -1,0 +1,70 @@
+<h1 id="информация">Информация</h1>
+<h2 id="докладчик">Докладчик</h2>
+<div class="columns" data-align="center">
+<div class="column" style="width:70%;">
+<ul>
+<li>Шония Ника Гигловна</li>
+<li>студентка НММбд-03-23</li>
+<li>Российский университет дружбы народов</li>
+<li><a href="https://github.com/NikaShoniya/study_2023-2024_os-intro" class="uri">https://github.com/NikaShoniya/study_2023-2024_os-intro</a></li>
+</ul>
+</div><div class="column" style="width:30%;">
+<p><img src="./image/kulyabov.jpg" /></p>
+</div>
+</div>
+<h1 id="вводная-часть">Вводная часть</h1>
+<h2 id="актуальность">Актуальность</h2>
+<pre><code>Семантическое версионирование описывается в манифесте семантического версионирования.
+
+Кратко его можно описать следующим образом:
+    Версия задаётся в виде кортежа МАЖОРНАЯ_ВЕРСИЯ.МИНОРНАЯ_ВЕРСИЯ.ПАТЧ.
+    Номер версии следует увеличивать:
+        МАЖОРНУЮ версию, когда сделаны обратно несовместимые изменения API.
+        МИНОРНУЮ версию, когда вы добавляете новую функциональность, не нарушая обратной совместимости.
+        ПАТЧ-версию, когда вы делаете обратно совместимые исправления.
+    Дополнительные обозначения для предрелизных и билд-метаданных возможны как дополнения к МАЖОРНАЯ.МИНОРНАЯ.ПАТЧ формату.</code></pre>
+<h2 id="объект-и-предмет-исследования">Объект и предмет исследования</h2>
+<ul>
+<li>Gitflow Workflow опубликована и популяризована Винсентом Дриссеном. Gitflow Workflow предполагает выстраивание строгой модели ветвления с учётом выпуска проекта. Данная модель отлично подходит для организации рабочего процесса на основе релизов. Работа по модели Gitflow включает создание отдельной ветки для исправлений ошибок в рабочей среде. Последовательность действий при работе по модели Gitflow: Из ветки master создаётся ветка develop. Из ветки develop создаётся ветка release. Из ветки develop создаются ветки feature. Когда работа над веткой feature завершена, она сливается с веткой develop. Когда работа над веткой релиза release завершена, она сливается в ветки develop и master. Если в master обнаружена проблема, из master создаётся ветка hotfix. Когда работа над веткой исправления hotfix завершена, она сливается в ветки develop и master.</li>
+</ul>
+<h2 id="цели-и-задачи">Цели и задачи</h2>
+<pre><code>Выполнить работу для тестового репозитория.
+Преобразовать рабочий репозиторий в репозиторий с git-flow и conventional commits.</code></pre>
+<h2 id="материалы-и-методы">Материалы и методы</h2>
+<pre><code>Для реализации семантического версионирования создано несколько программных продуктов.
+При этом лучше всего использовать комплексные продукты, которые используют информацию из коммитов системы версионирования.
+Коммиты должны иметь стандартизованный вид.
+В семантическое версионирование применяется вместе с общепринятыми коммитами.
+
+Пакет Conventional Changelog
+    Пакет Conventional Changelog является комплексным решением по управлению коммитами и генерации журнала изменений.
+    Содержит набор утилит, которые можно использовать по-отдельности.</code></pre>
+<h1 id="создание-презентации">Создание презентации</h1>
+<h2 id="процессор-pandoc">Процессор <code>pandoc</code></h2>
+<ul>
+<li>Pandoc: преобразователь текстовых файлов</li>
+<li>Сайт: <a href="https://pandoc.org/" class="uri">https://pandoc.org/</a></li>
+<li>Репозиторий: <a href="https://github.com/jgm/pandoc" class="uri">https://github.com/jgm/pandoc</a></li>
+</ul>
+<h2 id="формат-pdf">Формат <code>pdf</code></h2>
+<ul>
+<li>Использование LaTeX</li>
+<li>Пакет для презентации: <a href="https://ctan.org/pkg/beamer">beamer</a></li>
+<li>Тема оформления: <code>metropolis</code></li>
+</ul>
+<h2 id="код-для-формата-pdf">Код для формата <code>pdf</code></h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode yaml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true"></a><span class="fu">slide_level</span><span class="kw">:</span><span class="at"> </span><span class="dv">2</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true"></a><span class="fu">aspectratio</span><span class="kw">:</span><span class="at"> </span><span class="dv">169</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true"></a><span class="fu">section-titles</span><span class="kw">:</span><span class="at"> </span><span class="ch">true</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true"></a><span class="fu">theme</span><span class="kw">:</span><span class="at"> metropolis</span></span></code></pre></div>
+<h2 id="формат-html">Формат <code>html</code></h2>
+<ul>
+<li>Используется фреймворк <a href="https://revealjs.com/">reveal.js</a></li>
+<li>Используется <a href="https://revealjs.com/themes/">тема</a> <code>beige</code></li>
+</ul>
+<h2 id="код-для-формата-html">Код для формата <code>html</code></h2>
+<ul>
+<li>Тема задаётся в файле <code>Makefile</code></li>
+</ul>
+<pre class="make"><code>REVEALJS_THEME = beige </code></pre>
+<h1 id="результаты">Результаты</h1>
